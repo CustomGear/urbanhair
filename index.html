@@ -487,16 +487,28 @@
       overflow: hidden;
       margin-bottom: 22px;
       background: var(--dark);
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 1.1s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                  transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .team-card.in .team-photo {
+      opacity: 1;
+      transform: translateY(0);
     }
     .team-photo img {
       width: 100%;
-      height: 100%;
+      height: 116%;
+      margin-top: -8%;
       object-fit: cover;
       object-position: top center;
       display: block;
-      transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      will-change: transform;
+      filter: blur(18px) brightness(0.55);
+      transition: filter 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     }
-    .team-card:hover .team-photo img { transform: scale(1.05); }
+    .team-card.in .team-photo img { filter: blur(0) brightness(1); }
+    .team-card:hover .team-photo img { filter: brightness(1.08); }
     /* placeholder shown when no <img> is inside */
     .team-photo-placeholder {
       width: 100%;
@@ -1698,6 +1710,20 @@
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
     }, { threshold: 0.14 });
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    /* ─── TEAM PHOTO PARALLAX ────────────────────────── */
+    const teamImgs = document.querySelectorAll('.team-photo img');
+    const PARALLAX_STRENGTH = 0.09;
+    function updateTeamParallax() {
+      teamImgs.forEach(img => {
+        const rect = img.closest('.team-photo').getBoundingClientRect();
+        const center = rect.top + rect.height * 0.5 - window.innerHeight * 0.5;
+        const y = center * PARALLAX_STRENGTH;
+        img.style.transform = `translateY(${y}px)`;
+      });
+    }
+    window.addEventListener('scroll', updateTeamParallax, { passive: true });
+    updateTeamParallax();
 
     /* ─── MAILING LIST FORM ────────────────────────────── */
     function handleMailingSubmit(e) {
