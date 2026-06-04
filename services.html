@@ -286,11 +286,39 @@
     footer {
       background: var(--dark);
       border-top: 1px solid rgba(255,255,255,0.065);
-      padding: 48px 64px;
+      padding: 88px 64px 48px;
     }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 64px;
+      max-width: 1280px;
+      margin: 0 auto 64px;
+    }
+    .footer-logo-img { height: 52px; width: auto; display: block; margin-bottom: 24px; }
+    .footer-about { font-size: 13px; color: var(--muted); line-height: 1.8; max-width: 270px; }
+    .footer-col h4 {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 28px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 14px; }
+    .footer-col li a, .footer-col li span {
+      font-size: 13px;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .footer-col li a:hover { color: var(--gold-lt); }
     .footer-bottom {
       max-width: 1280px;
       margin: 0 auto;
+      padding-top: 36px;
+      border-top: 1px solid rgba(255,255,255,0.065);
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -315,7 +343,8 @@
       .page-header { padding: 120px 28px 72px; }
       .menu-wrapper { padding: 60px 28px 80px; }
       .book-cta { padding: 60px 28px; }
-      footer { padding: 40px 28px; }
+      footer { padding: 64px 28px 40px; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 44px; }
       .footer-bottom { flex-direction: column; gap: 20px; text-align: center; }
     }
   </style>
@@ -501,8 +530,47 @@
 
   <!-- FOOTER -->
   <footer>
+    <div class="footer-grid">
+      <div>
+        <img src="URBAN.svg" alt="URBAN Hair Studio" class="footer-logo-img">
+        <p class="footer-about">
+          A luxury hair studio where precision meets artistry.
+          Transforming hair, elevating confidence — one appointment at a time.
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4>Navigate</h4>
+        <ul>
+          <li><a href="index.html#about">Studio</a></li>
+          <li><a href="index.html#team">Team</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="index.html#gallery">Gallery</a></li>
+          <li><a href="index.html#mailing">VIP List</a></li>
+          <li><a href="index.html#booking">Book Now</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Hours</h4>
+        <ul>
+          <li><span>Sun – Mon &nbsp; Closed</span></li>
+          <li><span>Tue – Wed &nbsp; 10am – 6pm</span></li>
+          <li><span>Thu – Fri &nbsp;&nbsp; 10am – 7pm</span></li>
+          <li><span>Saturday &nbsp; 9am – 4pm</span></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+19413776060">(941) 377-6060</a></li>
+          <li><a href="mailto:hello@urbanhairstudio.com">hello@urbanhairstudio.com</a></li>
+          <li><span>3953 Cattlemen Rd.</span></li>
+          <li><span>Sarasota, FL 34233</span></li>
+        </ul>
+      </div>
+    </div>
     <div class="footer-bottom">
       <p class="footer-copy">© 2026 URBAN Hair Studio. All rights reserved.</p>
+      <p class="footer-copy">Powered by <a href="https://socialup.com" target="_blank" rel="noopener" style="color: var(--gold); text-decoration: none; transition: color 0.2s;" onmouseover="this.style.color='var(--gold-lt)'" onmouseout="this.style.color='var(--gold)'">SocialUp</a></p>
       <div class="footer-socials">
         <a href="#">Instagram</a>
         <a href="#">Facebook</a>
