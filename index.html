@@ -28,6 +28,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 921774;</script>
+  <script src="https://booking.mangomint.com/app.js" async></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1057,75 +1059,6 @@
     }
     .footer-socials a:hover { color: var(--gold-lt); }
 
-    /* ─── BOOKING MODAL ───────────────────────────────── */
-    .booking-modal-overlay {
-      position: fixed;
-      inset: 0;
-      z-index: 1000;
-      background: rgba(8, 8, 8, 0.92);
-      backdrop-filter: blur(12px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.35s ease;
-    }
-    .booking-modal-overlay.open {
-      opacity: 1;
-      pointer-events: all;
-    }
-    .booking-modal {
-      position: relative;
-      width: min(860px, 94vw);
-      height: min(780px, 88vh);
-      background: var(--dark);
-      border: 1px solid rgba(184,146,74,0.25);
-      transform: translateY(24px);
-      transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-    }
-    .booking-modal-overlay.open .booking-modal {
-      transform: translateY(0);
-    }
-    .booking-modal-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 18px 28px;
-      border-bottom: 1px solid rgba(184,146,74,0.18);
-    }
-    .booking-modal-title {
-      font-size: 10px;
-      font-weight: 500;
-      letter-spacing: 0.32em;
-      text-transform: uppercase;
-      color: var(--gold);
-    }
-    .booking-modal-close {
-      background: none;
-      border: 1px solid rgba(232,221,191,0.2);
-      color: var(--muted);
-      width: 34px;
-      height: 34px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      font-size: 18px;
-      line-height: 1;
-      transition: border-color 0.2s, color 0.2s;
-    }
-    .booking-modal-close:hover {
-      border-color: var(--gold-lt);
-      color: var(--gold-lt);
-    }
-    .booking-modal iframe {
-      width: 100%;
-      height: calc(100% - 61px);
-      border: none;
-      display: block;
-    }
-
     /* ─── SCROLL ANIMATIONS ────────────────────────────── */
     .reveal {
       opacity: 0;
@@ -1195,7 +1128,7 @@
       <li><a href="services.html">Services</a></li>
       <li><a href="#gallery">Gallery</a></li>
       <li><a href="#mailing">VIP List</a></li>
-      <li><a href="javascript:void(0)" onclick="openBooking()" class="nav-book">Book Now</a></li>
+      <li><a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="nav-book">Book Now</a></li>
     </ul>
   </nav>
 
@@ -1229,7 +1162,7 @@
           <p class="hero-tagline">Precision &nbsp;·&nbsp; Artistry &nbsp;·&nbsp; Style</p>
           <span class="hero-tagline-line right"></span>
         </div>
-        <a href="javascript:void(0)" onclick="openBooking()" class="hero-cta">Book Your Experience</a>
+        <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="hero-cta">Book Your Experience</a>
       </div>
 
       <!-- Mid-scroll phrase -->
@@ -1459,7 +1392,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price"><span class="svc-price-from">from</span>$35</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
       <div class="svc-card reveal reveal-d1">
@@ -1477,7 +1410,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price"><span class="svc-price-from">from</span>$65</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
       <div class="svc-card reveal reveal-d2">
@@ -1494,7 +1427,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price"><span class="svc-price-from">from</span>$120</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
       <div class="svc-card reveal">
@@ -1512,7 +1445,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price">$95</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
       <div class="svc-card reveal reveal-d1">
@@ -1532,7 +1465,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price"><span class="svc-price-from">from</span>$50</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
       <div class="svc-card reveal reveal-d2">
@@ -1552,7 +1485,7 @@
         </div>
         <div class="svc-footer">
           <div class="svc-price">$25</div>
-          <a href="javascript:void(0)" onclick="openBooking()" class="svc-book-link">Book →</a>
+          <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="svc-book-link">Book →</a>
         </div>
       </div>
     </div>
@@ -1705,23 +1638,8 @@
       Your next great hair day starts with a single appointment.
       Our stylists are ready to craft something extraordinary.
     </p>
-    <a href="javascript:void(0)" onclick="openBooking()" class="booking-btn reveal reveal-d3">Schedule Now</a>
+    <a href="https://booking.mangomint.com/921774?showOnlyScId=5" class="booking-btn reveal reveal-d3">Schedule Now</a>
   </section>
-
-  <!-- ─── BOOKING MODAL ──────────────────────────────────── -->
-  <div class="booking-modal-overlay" id="bookingModal" role="dialog" aria-modal="true" aria-label="Book an appointment">
-    <div class="booking-modal">
-      <div class="booking-modal-header">
-        <span class="booking-modal-title">Book Your Appointment</span>
-        <button class="booking-modal-close" id="bookingModalClose" aria-label="Close">&times;</button>
-      </div>
-      <iframe
-        src="https://booking.mangomint.com/921774?showOnlyScId=5"
-        title="URBAN Hair Studio — Online Booking"
-        loading="lazy"
-      ></iframe>
-    </div>
-  </div>
 
   <!-- ─── FOOTER ───────────────────────────────────────── -->
   <footer>
@@ -1741,7 +1659,7 @@
           <li><a href="services.html">Services</a></li>
           <li><a href="#gallery">Gallery</a></li>
           <li><a href="#mailing">VIP List</a></li>
-          <li><a href="javascript:void(0)" onclick="openBooking()">Book Now</a></li>
+          <li><a href="https://booking.mangomint.com/921774?showOnlyScId=5">Book Now</a></li>
         </ul>
       </div>
       <div class="footer-col">
@@ -1831,23 +1749,6 @@
     }
     window.addEventListener('scroll', updateTeamParallax, { passive: true });
     updateTeamParallax();
-
-    /* ─── BOOKING MODAL ───────────────────────────────── */
-    const bookingModal = document.getElementById('bookingModal');
-    const bookingModalClose = document.getElementById('bookingModalClose');
-
-    function openBooking() {
-      bookingModal.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    }
-    function closeBooking() {
-      bookingModal.classList.remove('open');
-      document.body.style.overflow = '';
-    }
-
-    bookingModalClose.addEventListener('click', closeBooking);
-    bookingModal.addEventListener('click', e => { if (e.target === bookingModal) closeBooking(); });
-    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBooking(); });
 
     /* ─── MAILING LIST FORM ────────────────────────────── */
     function handleMailingSubmit(e) {
