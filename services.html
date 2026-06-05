@@ -9,8 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <script>window.Mangomint = window.Mangomint || {}; window.Mangomint.CompanyId = 921774;</script>
-  <script src="https://booking.mangomint.com/app.js" async></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -337,6 +335,61 @@
     }
     .footer-socials a:hover { color: var(--gold-lt); }
 
+    /* ─── BOOKING MODAL ───────────────────────────────── */
+    .bk-overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 1000;
+      background: rgba(8,8,8,0.92);
+      backdrop-filter: blur(12px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.35s ease;
+    }
+    .bk-overlay.open { opacity: 1; pointer-events: all; }
+    .bk-box {
+      position: relative;
+      width: min(860px, 94vw);
+      height: min(780px, 88vh);
+      background: var(--dark);
+      border: 1px solid rgba(184,146,74,0.25);
+      transform: translateY(24px);
+      transition: transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+      display: flex;
+      flex-direction: column;
+    }
+    .bk-overlay.open .bk-box { transform: translateY(0); }
+    .bk-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 28px;
+      border-bottom: 1px solid rgba(184,146,74,0.18);
+      flex-shrink: 0;
+    }
+    .bk-title {
+      font-size: 10px;
+      font-weight: 500;
+      letter-spacing: 0.32em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .bk-close {
+      background: none;
+      border: 1px solid rgba(232,221,191,0.2);
+      color: var(--muted);
+      width: 34px; height: 34px;
+      display: flex; align-items: center; justify-content: center;
+      cursor: pointer;
+      font-size: 18px; line-height: 1;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .bk-close:hover { border-color: var(--gold-lt); color: var(--gold-lt); }
+    .bk-iframe { flex: 1; border: none; display: block; width: 100%; }
+
     /* ─── RESPONSIVE ───────────────────────────────────── */
     @media (max-width: 980px) {
       nav { padding: 24px 28px; }
@@ -527,7 +580,7 @@
     <p class="book-cta-label">Ready to Book?</p>
     <h2 class="book-cta-title">Call Us to <em>Schedule</em></h2>
     <p class="book-cta-sub">Our team is ready — give us a call or stop by the studio.</p>
-    <a href="https://booking.mangomint.com/921774" class="book-btn">Book Online</a>
+    <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774')" class="book-btn">Book Online</a>
   </div>
 
   <!-- FOOTER -->
@@ -581,11 +634,41 @@
     </div>
   </footer>
 
+  <!-- BOOKING MODAL -->
+  <div class="bk-overlay" id="bkOverlay">
+    <div class="bk-box">
+      <div class="bk-header">
+        <span class="bk-title">Book Your Appointment</span>
+        <button class="bk-close" id="bkClose">&times;</button>
+      </div>
+      <iframe class="bk-iframe" id="bkIframe" src="" title="URBAN Hair Studio — Online Booking"></iframe>
+    </div>
+  </div>
+
   <script>
     const nav = document.getElementById('nav');
     window.addEventListener('scroll', () => {
       nav.classList.toggle('scrolled', window.scrollY > 60);
     }, { passive: true });
+
+    const bkOverlay = document.getElementById('bkOverlay');
+    const bkIframe  = document.getElementById('bkIframe');
+    const bkClose   = document.getElementById('bkClose');
+
+    function openBooking(url) {
+      bkIframe.src = url;
+      bkOverlay.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeBooking() {
+      bkOverlay.classList.remove('open');
+      document.body.style.overflow = '';
+      bkIframe.src = '';
+    }
+
+    bkClose.addEventListener('click', closeBooking);
+    bkOverlay.addEventListener('click', e => { if (e.target === bkOverlay) closeBooking(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeBooking(); });
   </script>
 
 </body>
