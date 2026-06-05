@@ -176,7 +176,7 @@
     .service-list { list-style: none; }
     .service-row {
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
       padding: 18px 0;
       border-bottom: 1px solid rgba(255,255,255,0.05);
@@ -185,6 +185,21 @@
     }
     .service-row:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
     .service-row:hover { background: rgba(132,97,47,0.06); margin: 0 -20px; padding-left: 20px; padding-right: 20px; }
+    .row-book {
+      font-size: 9.5px;
+      font-weight: 500;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      white-space: nowrap;
+      opacity: 0;
+      transition: opacity 0.25s, color 0.2s;
+      flex-shrink: 0;
+    }
+    .service-row:hover .row-book { opacity: 1; }
+    .row-book:hover { color: var(--gold-lt); }
+    @media (max-width: 980px) { .row-book { opacity: 1; } }
     .service-name {
       font-size: 15px;
       color: var(--white);
@@ -417,7 +432,7 @@
       <li><a href="services.html" class="active">Services</a></li>
       <li><a href="index.html#gallery">Gallery</a></li>
       <li><a href="index.html#mailing">VIP List</a></li>
-      <li><a href="index.html#booking" class="nav-book">Book Now</a></li>
+      <li><a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774')" class="nav-book">Book Now</a></li>
     </ul>
   </nav>
 
@@ -444,16 +459,19 @@
           <div><div class="service-name">Women's Haircut &amp; Style</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$75</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Men's Haircut</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$35</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Beard Trim</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$5 – $15</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div>
@@ -462,26 +480,31 @@
           </div>
           <div class="service-dots"></div>
           <div class="service-price">$25</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Bang Trim</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$10</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Shampoo &amp; Blowout</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$50</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Long Hair Shampoo &amp; Blowout</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$60</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Special Event Styling</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$95</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=4')" class="row-book">Book →</a>
         </li>
       </ul>
     </div>
@@ -497,41 +520,49 @@
           <div><div class="service-name">Root Touch-Up</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$75+</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Full Color</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$95+</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Mini Highlights</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$65+</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Partial Highlights</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$85+</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Full Highlights</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$120+</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Men's Color</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$70</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Balayage or Foilyage</div></div>
           <div class="service-dots"></div>
           <div class="service-price consult">Consultation</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Toner / Gloss Add-On</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$40</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=5')" class="row-book">Book →</a>
         </li>
       </ul>
     </div>
@@ -547,11 +578,13 @@
           <div><div class="service-name">Keratin Complex — Permanent</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$300</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=7')" class="row-book">Book →</a>
         </li>
         <li class="service-row">
           <div><div class="service-name">Keratin Complex — Semi-Permanent</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$120</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=7')" class="row-book">Book →</a>
         </li>
       </ul>
     </div>
@@ -567,6 +600,7 @@
           <div><div class="service-name">Deep Conditioning Treatment</div></div>
           <div class="service-dots"></div>
           <div class="service-price">$25</div>
+          <a href="javascript:void(0)" onclick="openBooking('https://booking.mangomint.com/921774?showOnlyScId=6')" class="row-book">Book →</a>
         </li>
       </ul>
     </div>
